@@ -1,0 +1,38 @@
+image:
+  file: .gitpod/.gitpod.Dockerfile
+
+tasks:
+  - name: 'Install Node modules and compile Serenity/JS'
+    init: |
+        nvm install
+        nvm use
+
+  - name: 'Install VSCode Extensions'
+    command: |
+        echo "Wait for VSCode to boot up..."
+        sleep 10
+        echo "Installing Cucumber extension..."
+        code --install-extension /vscode-extensions/cucumber-official.vsix
+
+  - name: 'Init project'
+    command: |
+      npm install
+
+vscode:
+  extensions:
+    - CucumberOpen.cucumber-official
+    - dbaeumer.vscode-eslint
+    - eamodio.gitlens
+    - EditorConfig.EditorConfig
+    - Gruntfuggly.todo-tree
+    - streetsidesoftware.code-spell-checker
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: prevent-merge-on-error
+    addComment: false
+    addBadge: true
