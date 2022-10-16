@@ -14,7 +14,7 @@ import { config } from '../../wdio.conf';
  *
  * {actor} and {pronoun} are custom expressions defined under support/parameters.ts
  */
-Given('{actor} starts with the {string} example', async (actor: Actor, exampleName: string) =>
+Given('{actor} starts with the {string} example',{timeout: 3 * 10000}, async (actor: Actor, exampleName: string) =>
     actor.attemptsTo(
         Navigate.to(config.baseUrl),
         PickExample.called(exampleName),

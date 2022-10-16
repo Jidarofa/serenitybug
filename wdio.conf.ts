@@ -39,7 +39,7 @@ export const config: WebdriverIOConfig = {
         // <string[] | string> (expression) only execute the features or scenarios with tags matching the expression
         //tags: ["@testApi"],
         tags: [
-             'not @ignore' 
+            //'not @ignore' 
             //'@FE-UWS'
         ],
         //tags: ['@testFE-UWS'],
@@ -53,7 +53,7 @@ export const config: WebdriverIOConfig = {
         maxInstances:1,
         'goog:chromeOptions': {
             args: [
-                //'--headless',
+                '--headless',
                 '--disable-infobars',
                 '--no-sandbox',
                 '--disable-gpu',
