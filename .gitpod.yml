@@ -14,6 +14,10 @@ tasks:
         echo "Installing Cucumber extension..."
         code --install-extension /vscode-extensions/cucumber-official.vsix
 
+  - name: 'Init project'
+    command: |
+      npm install
+
 vscode:
   extensions:
     - CucumberOpen.cucumber-official
